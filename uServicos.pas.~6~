@@ -1,0 +1,41 @@
+unit uServicos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls;
+
+type
+  TfrmServicos = class(TForm)
+    Servicos_Panel3: TPanel;
+    DBGrid_Servicos: TDBGrid;
+    DBNavigator_Servicos: TDBNavigator;
+    DataSource_Servicos: TDataSource;
+    lblCodigo_Servico: TLabel;
+    edtCodigo_Servico: TDBEdit;
+    lblData: TLabel;
+    edtData: TDBEdit;
+    lblCodigo_Cliente: TLabel;
+    edtCodigo_Cliente: TDBEdit;
+    lblDescricao_Problema: TLabel;
+    edtDescricao_Problema: TDBEdit;
+    lblPreco_Servico: TLabel;
+    edtPreco_Servico: TDBEdit;
+    lblPreco_Pecas: TLabel;
+    edtPreco_Pecas: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmServicos: TfrmServicos;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,134 @@
+object frmServicos: TfrmServicos
+  Left = 0
+  Top = 0
+  Caption = 'frmServicos'
+  ClientHeight = 626
+  ClientWidth = 816
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 8
+    Top = 312
+    Width = 800
+    Height = 306
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 64
+      Top = 72
+      Width = 83
+      Height = 13
+      Caption = 'CODIGO_ORDEM'
+      FocusControl = DBEdit1
+    end
+    object Label2: TLabel
+      Left = 64
+      Top = 112
+      Width = 94
+      Height = 13
+      Caption = 'CODIGO_CLIENTES'
+      FocusControl = DBEdit2
+    end
+    object Label3: TLabel
+      Left = 64
+      Top = 152
+      Width = 53
+      Height = 13
+      Caption = 'PROBLEMA'
+      FocusControl = DBEdit3
+    end
+    object Label4: TLabel
+      Left = 64
+      Top = 192
+      Width = 83
+      Height = 13
+      Caption = 'VALOR_SERVICO'
+      FocusControl = DBEdit4
+    end
+    object Label5: TLabel
+      Left = 64
+      Top = 232
+      Width = 71
+      Height = 13
+      Caption = 'VALOR_PECAS'
+      FocusControl = DBEdit5
+    end
+    object DBEdit1: TDBEdit
+      Left = 64
+      Top = 88
+      Width = 264
+      Height = 21
+      DataField = 'CODIGO_ORDEM'
+      DataSource = DataSource_Servicos
+      TabOrder = 0
+    end
+    object DBEdit2: TDBEdit
+      Left = 64
+      Top = 128
+      Width = 264
+      Height = 21
+      DataField = 'CODIGO_CLIENTES'
+      DataSource = DataSource_Servicos
+      TabOrder = 1
+    end
+    object DBEdit3: TDBEdit
+      Left = 64
+      Top = 168
+      Width = 654
+      Height = 21
+      DataField = 'PROBLEMA'
+      DataSource = DataSource_Servicos
+      TabOrder = 2
+    end
+    object DBEdit4: TDBEdit
+      Left = 64
+      Top = 208
+      Width = 199
+      Height = 21
+      DataField = 'VALOR_SERVICO'
+      DataSource = DataSource_Servicos
+      TabOrder = 3
+    end
+    object DBEdit5: TDBEdit
+      Left = 64
+      Top = 248
+      Width = 199
+      Height = 21
+      DataField = 'VALOR_PECAS'
+      DataSource = DataSource_Servicos
+      TabOrder = 4
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 8
+    Width = 793
+    Height = 241
+    DataSource = DataSource_Servicos
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 8
+    Top = 255
+    Width = 790
+    Height = 42
+    DataSource = DataSource_Servicos
+    TabOrder = 2
+  end
+  object DataSource_Servicos: TDataSource
+    DataSet = DataModule2.FDTable_Servicos
+    Left = 416
+    Top = 360
+  end
+end
