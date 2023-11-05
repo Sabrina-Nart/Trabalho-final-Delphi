@@ -1,0 +1,42 @@
+unit uClientes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls;
+
+type
+  TfrmClientes = class(TForm)
+    DBGrid_Clientes: TDBGrid;
+    DBNavigator_Clientes: TDBNavigator;
+    DataSource_Clientes2: TDataSource;
+    Clientes_Panel2: TPanel;
+    lblCodigo_Clientes: TLabel;
+    lblNome: TLabel;
+    lblEndereco: TLabel;
+    lblCodigo_Cidades: TLabel;
+    lblTelefone: TLabel;
+    edtCodigo_Clientes: TDBEdit;
+    edtNome: TDBEdit;
+    edtEndereco: TDBEdit;
+    edtCodigo_Cidades: TDBEdit;
+    edtTelefone: TDBEdit;
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmClientes: TfrmClientes;
+
+implementation
+
+{$R *.dfm}
+
+uses uDadaModulo_Cidades;
+
+end.

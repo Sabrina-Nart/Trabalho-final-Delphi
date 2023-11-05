@@ -1,0 +1,51 @@
+unit uClientes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, Vcl.Buttons;
+
+type
+  TfrmClientes = class(TForm)
+    DBGrid_Clientes: TDBGrid;
+    DBNavigator_Clientes: TDBNavigator;
+    DataSource_Clientes2: TDataSource;
+    Clientes_Panel2: TPanel;
+    lblCodigo_Clientes: TLabel;
+    lblNome: TLabel;
+    lblEndereco: TLabel;
+    lblTelefone: TLabel;
+    edtCodigo_Clientes: TDBEdit;
+    edtNome: TDBEdit;
+    edtEndereco: TDBEdit;
+    edtTelefone: TDBEdit;
+    Label1: TLabel;
+    DBLookupComboBox_Codigo_Cidade: TDBLookupComboBox;
+    BitBtn_Excluir: TBitBtn;
+    procedure BitBtn_ExcluirClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmClientes: TfrmClientes;
+
+implementation
+
+{$R *.dfm}
+
+uses uDadaModulo_Cidades, uServicos;
+////////////////////////////////////////////////////////
+procedure TfrmClientes.BitBtn_ExcluirClick(Sender: TObject);
+
+begin
+    DataSource_Clientes2.DataSet.Delete;
+
+end;
+///////////////////////////////////////////////////////////
+end.

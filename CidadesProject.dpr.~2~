@@ -1,0 +1,18 @@
+program CidadesProject;
+
+uses
+  Vcl.Forms,
+  uCidades in 'uCidades.pas' {frmInformatica},
+  uDadaModulo_Cidades in 'uDadaModulo_Cidades.pas' {DataModule2: TDataModule},
+  uClientes in 'uClientes.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmInformatica, frmInformatica);
+  Application.CreateForm(TDataModule2, DataModule2);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

@@ -1,0 +1,109 @@
+object DataModule2: TDataModule2
+  OldCreateOrder = False
+  Height = 273
+  Width = 508
+  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
+    Left = 64
+    Top = 120
+  end
+  object FDQuery_Cidades: TFDQuery
+    Connection = FDConnection_Cidades
+    SQL.Strings = (
+      'create table if not exists cidades'
+      '('
+      '  id int no null,'
+      '  nome varchar(30),'
+      '  sigla varchar(2),'
+      '  primary key(id)'
+      ')')
+    Left = 200
+    Top = 40
+  end
+  object FDQuery_Clientes: TFDQuery
+    SQL.Strings = (
+      'CREATE TABLE IF NOT EXISTS CLIENTE'
+      '('
+      '  ID INT NO NULL,'
+      '  NOME VARCHAR(20),'
+      '  ENDERECO VARCHAR(30),'
+      '  ID_CIDADE INT,'
+      '  TELEFONE VARCHAR(20),'
+      '  Primary Key (ID) '
+      ')')
+    Left = 336
+    Top = 40
+  end
+  object FDTable_Clientes: TFDTable
+    IndexFieldNames = 'id'
+    Connection = FDConnection_Cidades
+    TableName = 'CIDADES'
+    Left = 336
+    Top = 120
+    object FDTable_ClientesID: TIntegerField
+      DisplayLabel = 'C'#243'digo do Cliente:'
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object FDTable_Clientesnome: TStringField
+      DisplayLabel = 'Nome:'
+      FieldName = 'nome'
+      Origin = 'nome'
+    end
+    object FDTable_ClientesENDERECO: TStringField
+      DisplayLabel = 'Endere'#231'o:'
+      FieldName = 'ENDERECO'
+      Origin = 'ENDERECO'
+      Size = 30
+    end
+    object FDTable_ClientesID_CIDADE: TIntegerField
+      DisplayLabel = 'C'#243'digo da Cidade:'
+      FieldName = 'ID_CIDADE'
+      Origin = 'ID_CIDADE'
+    end
+    object FDTable_ClientesTELEFONE: TStringField
+      DisplayLabel = 'Telefone:'
+      FieldName = 'TELEFONE'
+      Origin = 'TELEFONE'
+      EditMask = '!\(99\)00000-0000;1;_'
+    end
+  end
+  object FDConnection_Cidades: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\Nart\Documents\DELPHI - 2 FASE\Trabalho_Inform' +
+        'atica\Trabalho_Informatica'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    Connected = True
+    Left = 64
+    Top = 40
+  end
+  object FDTable_Cidades: TFDTable
+    Active = True
+    IndexFieldNames = 'ID'
+    Connection = FDConnection_Cidades
+    TableName = 'CIDADES'
+    Left = 192
+    Top = 120
+    object FDTable_CidadesID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object FDTable_CidadesNOME_CIDADE: TStringField
+      FieldName = 'NOME_CIDADE'
+      Origin = 'NOME_CIDADE'
+      Required = True
+      Size = 50
+    end
+    object FDTable_CidadesSIGLA_ESTADO: TStringField
+      FieldName = 'SIGLA_ESTADO'
+      Origin = 'SIGLA_ESTADO'
+      Required = True
+      Size = 2
+    end
+  end
+end
